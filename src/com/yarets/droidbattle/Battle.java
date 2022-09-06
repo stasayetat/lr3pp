@@ -10,7 +10,7 @@ public class Battle {
     private DoubleAttack daDroid = new DoubleAttack("daD");
     private DoubleProtectionDroid dpDroid = new DoubleProtectionDroid("dpD");
     private AttackTwiceDroid aDroid = new AttackTwiceDroid("aD");
-    private DefaultDroid[] twoDroid = new DefaultDroid[2];
+    private DefaultDroid[] twoDroid;
     private Arena battleArena;
     public Battle() {
         Scanner sc = new Scanner(System.in);
@@ -22,13 +22,15 @@ public class Battle {
         String nameDroid = null;
         chooseBattle = sc.nextInt();
         if(chooseBattle == 2) {
-            System.out.println("Виберіть кількість гравців у кожній команді: ");
+            System.out.println("Виберіть кількість гравців у кожній команді(максимум 5): ");
             chooseTeamBattle = sc.nextInt();
         }
         if(chooseBattle == 1)
             numPlayerTeam = 2;
+
         else
             numPlayerTeam = chooseTeamBattle * 2;
+        twoDroid = new DefaultDroid[numPlayerTeam];
         for(int i = 0; i < numPlayerTeam; ++i)
         {
             System.out.println("Виберіть дроїда від 1 до 5, 0 - інформація про дроїдів");
@@ -79,7 +81,7 @@ public class Battle {
 
     public void typeOfArena() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Виберіть арену для битви(1-3, 0 - інформація про арени): ");
+        System.out.println("Виберіть арену для битви(1-4, 0 - інформація про арени): ");
         int chArena;
         chArena = sc.nextInt();
         if(chArena == 0) {
@@ -87,7 +89,6 @@ public class Battle {
             System.out.println("Виберіть арену: ");
             chArena = sc.nextInt();
         }
-            infoArena();
         switch (chArena) {
             case 1:
                 battleArena = new Arena(twoDroid[0], twoDroid[1]);
@@ -101,13 +102,17 @@ public class Battle {
                 battleArena = new FiftyPercentArena(twoDroid[0], twoDroid[1]);
                 battleArena.allData();
                 break;
+            case 4:
+                ArenaManyDroid battleManyDroid = new ArenaManyDroid(twoDroid);
+                battleManyDroid.allData();
+                break;
         }
-        Arena arena1 = new Arena(twoDroid[0], twoDroid[1]);
     }
 
     public void infoArena() {
         System.out.println("1. Звичайна арена 1 vs 1");
         System.out.println("2. Арена, на якій здоров'я міняється з уроном");
         System.out.println("3. Арена, на якій при кожному ударі шанс 50% на промах");
+        System.out.println("4. Арена, для бою багатьох дроїдів");
     }
 }
