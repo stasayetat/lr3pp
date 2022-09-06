@@ -1,7 +1,9 @@
 package com.yarets.droidbattle;
 
+import com.yarets.droidbattle.TypesofDroids.DoubleProtectionDroid;
+
 public class Main {
     public static void main(String[] args) {
-        123
+        Battle qwe = new Battle();
     }
 }
