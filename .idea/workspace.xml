@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bb4e5cd-34cd-4ff6-af85-ae991e3ec3eb" name="Changes" comment="del hello">
-      <change afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/ArenaManyDroid.java" afterDir="false" />
+    <list default="true" id="7bb4e5cd-34cd-4ff6-af85-ae991e3ec3eb" name="Changes" comment="add arenaMany">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/ArenaManyDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/ArenaManyDroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DoctorDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DoctorDroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DoubleAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DoubleAttack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DoubleProtectionDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DoubleProtectionDroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/TwoLivesDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/TwoLivesDroid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +40,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
@@ -92,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662455348575</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add arenaMany">
+      <created>1662475298162</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1662475298162</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,7 +124,8 @@
     <MESSAGE value="create a project" />
     <MESSAGE value="add hello" />
     <MESSAGE value="del hello" />
-    <option name="LAST_COMMIT_MESSAGE" value="del hello" />
+    <MESSAGE value="add arenaMany" />
+    <option name="LAST_COMMIT_MESSAGE" value="add arenaMany" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -126,14 +141,9 @@
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/yarets/droidbattle/Battle.java</url>
-          <line>106</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/ArenaManyDroid.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="24" />
+          <line>75</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />

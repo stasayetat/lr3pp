@@ -1,9 +1,9 @@
 package com.yarets.droidbattle.TypesofDroids;
 
 public class TwoLivesDroid extends DefaultDroid{
-    private String name;
+    private final String name;
 
-    private int damage = 11;
+    private final int damage = 11;
     private int health = 5;
     private int doubleLive = 1;
     public TwoLivesDroid(String name) {

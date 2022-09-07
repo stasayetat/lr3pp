@@ -2,7 +2,7 @@ package com.yarets.droidbattle.TypesofDroids;
 
 public class DoubleProtectionDroid extends DefaultDroid{
     private String name;
-    private int damage = 9;
+    private int damage = 10;
     private int health = 8;
     private int doubleProtection = 1;
 

@@ -1,10 +1,10 @@
 package com.yarets.droidbattle.TypesofDroids;
 
 public class DoctorDroid extends DefaultDroid{
-    private String name;
-    private int damage = 2;
-    private int health = 15;
-    private int healD = 5;
+    private final String name;
+    private final int damage = 3;
+    private final int health = 15;
+    private final int healD = 5;
     private DefaultDroid patient;
 
     public DoctorDroid(String name) {

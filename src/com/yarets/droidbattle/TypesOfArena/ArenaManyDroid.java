@@ -10,14 +10,11 @@ import java.util.Scanner;
 
 public class ArenaManyDroid {
     private DefaultDroid[] dTeam;
-    private DefaultDroid[] fTeam;
-    private DefaultDroid[] sTeam;
     protected DefaultDroid[] attacker;
     protected DefaultDroid[] defender;
     private DefaultDroid[] tmp;
     private int curRound = 0;
-    private int fTeamAlive;
-    private int sTeamAlive;
+
     public ArenaManyDroid(DefaultDroid[] dTeam) {
         this.dTeam = dTeam;
     }
@@ -32,8 +29,8 @@ public class ArenaManyDroid {
     }
     public DefaultDroid[] stBattle() {
         int lenTeam = dTeam.length;
-        fTeam = new DefaultDroid[lenTeam/2];
-        sTeam = new DefaultDroid[lenTeam/2];
+        DefaultDroid[] fTeam = new DefaultDroid[lenTeam / 2];
+        DefaultDroid[] sTeam = new DefaultDroid[lenTeam / 2];
         System.arraycopy(dTeam, 0, fTeam, 0, lenTeam/2);
         System.arraycopy(dTeam, lenTeam/2, sTeam, 0, lenTeam/2);
         System.out.println("Команда А: ");
@@ -49,8 +46,6 @@ public class ArenaManyDroid {
             attacker = sTeam;
             defender = fTeam;
         }
-        fTeamAlive = attacker.length;
-        sTeamAlive = defender.length;
         tmp = new DefaultDroid[attacker.length];
         int curAttack = 0;
         do {
@@ -61,7 +56,9 @@ public class ArenaManyDroid {
                 curAttack = 0;
             if(attacker[curAttack].getHealth() == 0)
             {
-                swapTeams(attacker, defender);
+                //swapTeams(attacker, defender);
+                curAttack++;
+                curRound--;
                 continue;
             }
             System.out.println("-------------------------------------");
@@ -135,7 +132,4 @@ public class ArenaManyDroid {
         return false;
     }
 }
-     /*   System.arraycopy(tmp, 0, this.attacker, 0, this.attacker.length);
-                System.arraycopy(this.attacker, 0, this.defender, 0, this.attacker.length);
-                System.arraycopy(this.defender, 0, tmp, 0, this.attacker.length);
-*/
+
