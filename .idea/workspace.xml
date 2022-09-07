@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bb4e5cd-34cd-4ff6-af85-ae991e3ec3eb" name="Changes" comment="add arenaMany">
+    <list default="true" id="7bb4e5cd-34cd-4ff6-af85-ae991e3ec3eb" name="Changes" comment="fix ArenaManyDroid">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/ArenaManyDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/ArenaManyDroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DoctorDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DoctorDroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DoubleAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DoubleAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DoubleProtectionDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DoubleProtectionDroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/TwoLivesDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/TwoLivesDroid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662475298162</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix ArenaManyDroid">
+      <created>1662532515548</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1662532515548</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -125,7 +128,8 @@
     <MESSAGE value="add hello" />
     <MESSAGE value="del hello" />
     <MESSAGE value="add arenaMany" />
-    <option name="LAST_COMMIT_MESSAGE" value="add arenaMany" />
+    <MESSAGE value="fix ArenaManyDroid" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix ArenaManyDroid" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -142,8 +146,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/ArenaManyDroid.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="27" />
+          <line>26</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />

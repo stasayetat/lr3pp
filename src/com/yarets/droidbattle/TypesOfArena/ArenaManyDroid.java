@@ -26,6 +26,7 @@ public class ArenaManyDroid {
     public void endBattle(DefaultDroid[] winDroid) {
         System.out.println("Команда переможців: ");
         infoTeam(winDroid);
+        System.exit(0);
     }
     public DefaultDroid[] stBattle() {
         int lenTeam = dTeam.length;
@@ -54,12 +55,11 @@ public class ArenaManyDroid {
                 curAttack++;
             if(curAttack >= attacker.length)
                 curAttack = 0;
-            if(attacker[curAttack].getHealth() == 0)
+            while(attacker[curAttack].getHealth() == 0)
             {
-                //swapTeams(attacker, defender);
                 curAttack++;
-                curRound--;
-                continue;
+                if(curAttack >= attacker.length)
+                    curAttack = 0;
             }
             System.out.println("-------------------------------------");
             System.out.println("Раунд - " + curRound);
@@ -126,7 +126,7 @@ public class ArenaManyDroid {
 
     private boolean checkTeamsAlive(DefaultDroid[] chTeam) {
         for(int j = 0; j < chTeam.length; ++j) {
-            if(chTeam[j].getHealth() != 0)
+            if(chTeam[j].getHealth() > 0)
                 return true;
         }
         return false;
