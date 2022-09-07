@@ -1,5 +1,7 @@
 package com.yarets.droidbattle.TypesofDroids;
-
+/*
+*Підклас DefaultDroid, перша атака по цьомі дроїду не наносить урону
+ */
 public class DoubleProtectionDroid extends DefaultDroid{
     private String name;
     private int damage = 10;
@@ -12,6 +14,9 @@ public class DoubleProtectionDroid extends DefaultDroid{
         setHealth(health);
         setDamage(damage);
     }
+    /*
+    *Метод в якому перший урон по дроїду пропускається
+     */
     public int attackDroid(int damageDroid) {
         if (this.doubleProtection == 0) {
             this.health -= damageDroid;

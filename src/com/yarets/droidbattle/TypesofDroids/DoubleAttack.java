@@ -1,5 +1,7 @@
 package com.yarets.droidbattle.TypesofDroids;
-
+/*
+*Підклас DefaultDroid, після атаки його урон збільшується удвічі
+ */
 public class DoubleAttack extends DefaultDroid{
     private String name;
     private int damage = 3;
@@ -11,10 +13,6 @@ public class DoubleAttack extends DefaultDroid{
         setHealth(health);
         setDamage(damage);
     }
-
-
-
-
 
 }
 

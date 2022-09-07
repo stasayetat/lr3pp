@@ -3,15 +3,29 @@ package com.yarets.droidbattle;
 import com.yarets.droidbattle.TypesofDroids.*;
 import com.yarets.droidbattle.TypesOfArena.*;
 import java.util.Scanner;
-
+/*
+*Клас в якому створюються дроїди та вибираємо арену для поєдинку
+ */
 public class Battle {
-    private TwoLivesDroid tDroid = new TwoLivesDroid("tD");
-    private DoctorDroid dDroid = new DoctorDroid("dD");
-    private DoubleAttack daDroid = new DoubleAttack("daD");
-    private DoubleProtectionDroid dpDroid = new DoubleProtectionDroid("dpD");
-    private AttackTwiceDroid aDroid = new AttackTwiceDroid("aD");
+    /*
+    *Поля створені для подання інформації про різних дроїдів
+     */
+    private final TwoLivesDroid tDroid = new TwoLivesDroid("tD");
+    private final DoctorDroid dDroid = new DoctorDroid("dD");
+    private final DoubleAttack daDroid = new DoubleAttack("daD");
+    private final DoubleProtectionDroid dpDroid = new DoubleProtectionDroid("dpD");
+    private final AttackTwiceDroid aDroid = new AttackTwiceDroid("aD");
+    /*
+    *Поле для масиву зі всіма дроїдами
+     */
     private DefaultDroid[] twoDroid;
+    /*
+    *Поле для ініціалізація арени для поєдинку
+     */
     private Arena battleArena;
+    /*
+    *Конструктор в якому ми вибираємо тип поєдинку та створюємо дроїдів
+     */
     public Battle() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Виберіть тип бою 1vs1(1) чи команда на команду(2): ");
@@ -70,7 +84,9 @@ public class Battle {
         typeOfArena();
     }
 
-
+/*
+*Метод для друку інформації про різні класи дроїдів
+ */
     public void infoAboutDroid() {
         System.out.println("1. Дроїд - DoctorDroid(може лікувати себе або союзників), його атака " + dDroid.getDamage() + ", його здоров'я " + dDroid.getHealth());
         System.out.println("2. Дроїд - DoubleAttack(після атаки збільшує свою урон удвічі), його атака " + daDroid.getDamage() + ", його здоров'я " + daDroid.getHealth());
@@ -78,7 +94,9 @@ public class Battle {
         System.out.println("4. Дроїд - TwoLivesDroid(після того як здоров'я менше 0, воно стає 1), його атака " + tDroid.getDamage() + ", його здоров'я " + tDroid.getHealth());
         System.out.println("5. Дроїд - AttackTwiceDroid(атакує двічі за хід), його атака " + aDroid.getDamage() + ", його здоров'я " + aDroid.getHealth());
     }
-
+/*
+*Метод для вибору арени
+ */
     public void typeOfArena() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Виберіть арену для битви(1-4, 0 - інформація про арени): ");
@@ -108,7 +126,9 @@ public class Battle {
                 break;
         }
     }
-
+/*
+*Метод для друку інформації про різні арени
+ */
     public void infoArena() {
         System.out.println("1. Звичайна арена 1 vs 1");
         System.out.println("2. Арена, на якій здоров'я міняється з уроном");

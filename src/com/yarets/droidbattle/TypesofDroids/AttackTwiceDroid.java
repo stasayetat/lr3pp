@@ -1,5 +1,7 @@
 package com.yarets.droidbattle.TypesofDroids;
-
+/*
+*Підклас DefaultDroid, атакує 2 рази
+ */
 public class AttackTwiceDroid extends DefaultDroid{
     private String name;
     private int damage = 8;

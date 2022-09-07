@@ -1,5 +1,7 @@
 package com.yarets.droidbattle.TypesofDroids;
-
+/*
+*Підклас DefaultDroid, після смерті відроджується з 1 HP
+ */
 public class TwoLivesDroid extends DefaultDroid{
     private final String name;
 
@@ -12,7 +14,9 @@ public class TwoLivesDroid extends DefaultDroid{
         setHealth(health);
         setDamage(damage);
     }
-
+/*
+*Метод в якому реалізується властивість цього дроїда
+ */
     public int attackDroid(int damageDroid) {
         this.health -= damageDroid;
         if(this.health <= 0  && doubleLive == 1) {

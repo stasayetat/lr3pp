@@ -7,7 +7,9 @@ import com.yarets.droidbattle.TypesofDroids.DoubleAttack;
 
 import java.util.Random;
 import java.util.Scanner;
-
+/*
+*Окремий клас Арени для битви команд на команду
+ */
 public class ArenaManyDroid {
     private DefaultDroid[] dTeam;
     protected DefaultDroid[] attacker;
@@ -18,16 +20,24 @@ public class ArenaManyDroid {
     public ArenaManyDroid(DefaultDroid[] dTeam) {
         this.dTeam = dTeam;
     }
+    /*
+    Метод в якому ми запускаємо битву і потім викликаємо метод про її закінчення
+     */
     public void allData() {
         DefaultDroid[] winDroid = stBattle();
         endBattle(winDroid);
     }
-
+/*
+*Метод в якому ми оголошуємо переможців і закінчуємо програму
+ */
     public void endBattle(DefaultDroid[] winDroid) {
         System.out.println("Команда переможців: ");
         infoTeam(winDroid);
         System.exit(0);
     }
+    /*
+    *Метод самої битви, де ми створюємо 2 команди, вибираємо, яка 1 буде атакувати, і викликаємо атаку поки команда противників жива
+     */
     public DefaultDroid[] stBattle() {
         int lenTeam = dTeam.length;
         DefaultDroid[] fTeam = new DefaultDroid[lenTeam / 2];
@@ -69,7 +79,9 @@ public class ArenaManyDroid {
         }while(checkTeamsAlive(attacker));
         return defender;
     }
-
+/*
+*Метод в якому ми виводимо інформацію про певну команду, чи знищений дроїд чи ні
+ */
     public void infoTeam(DefaultDroid[] tmpTeam) {
         for(int i = 0; i < tmpTeam.length; ++i) {
             if(!tmpTeam[i].isAlive()) {
@@ -82,7 +94,9 @@ public class ArenaManyDroid {
             System.out.println(i + ".Дроїд: " + tmpTeam[i].getName() + " Здоров'я: " + tmpTeam[i].getHealth() + " Урон: " + tmpTeam[i].getDamage());
         }
     }
-
+/*
+*Метод в якому перевіряємо чи є атакуючий дроїд певним класом, та атакуємо супротивника
+ */
     private void doTeamBattle(int curAttack) {
         Scanner sc = new Scanner(System.in);
         if(attacker[curAttack] instanceof DoctorDroid) {
@@ -106,7 +120,9 @@ public class ArenaManyDroid {
         else
             printInfo(curAttack);
     }
-
+/*
+*Метод для випадкового вибору противника та удару його
+ */
     private void printInfo(int curAttack) {
         Random rand = new Random();
         int curDef;
@@ -118,12 +134,18 @@ public class ArenaManyDroid {
         if(!checkTeamsAlive(defender))
             endBattle(attacker);
     }
+
+    /*
+    *Кожного ходу ми змінюємо команду атакуючих дроїдів на інші
+     */
     private void swapTeams(DefaultDroid[] attacker, DefaultDroid[] defender) {
         System.arraycopy(this.attacker, 0, tmp, 0, this.attacker.length);
         System.arraycopy(this.defender, 0, this.attacker, 0, this.attacker.length);
         System.arraycopy(tmp, 0, this.defender, 0, this.attacker.length);
     }
-
+/*
+*Перевірка чи певна команда жива
+ */
     private boolean checkTeamsAlive(DefaultDroid[] chTeam) {
         for(int j = 0; j < chTeam.length; ++j) {
             if(chTeam[j].getHealth() > 0)
