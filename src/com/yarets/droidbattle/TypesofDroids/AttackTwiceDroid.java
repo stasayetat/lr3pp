@@ -14,5 +14,9 @@ public class AttackTwiceDroid extends DefaultDroid{
         setDamage(damage);
     }
 
+    public int attackDroid(int damageDroid) {
+        this.health -= damageDroid;
+        return damageDroid;
+    }
 
 }

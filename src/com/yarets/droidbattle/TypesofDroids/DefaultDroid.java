@@ -6,7 +6,7 @@ public class DefaultDroid {
     /*
     *Поля для задання імені, урону та здоров'я дроїда
      */
-    private final String name;
+    private String name;
     private int damage;
     private int health;
     /*
@@ -29,7 +29,12 @@ public class DefaultDroid {
     public int getHealth() {
         return health;
     }
-/*
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /*
 *Метод для зняття здоров'я дроїда на задану кількість урона
  */
     public int attackDroid(int damageDroid) {
@@ -44,6 +49,8 @@ public class DefaultDroid {
     public void setDamage(int damage) {
         this.damage = damage;
     }
+
+
 /*
 *Перевірка дроїда на життя
  */

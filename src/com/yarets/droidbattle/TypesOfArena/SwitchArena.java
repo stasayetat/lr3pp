@@ -5,12 +5,18 @@ import com.yarets.droidbattle.TypesofDroids.DefaultDroid;
 *Арена, під клас звичайної Arena, в ній в кожного дроїда здоров'я міняється з атакою
  */
 public class SwitchArena extends Arena{
-    public SwitchArena(DefaultDroid fDroid, DefaultDroid sDroid) {
-        super(fDroid, sDroid);
+    public SwitchArena() {
+    }
+
+    @Override
+    public void allData(DefaultDroid[] dTeam) {
+        this.fDroid = dTeam[0];
+        this.sDroid = dTeam[1];
         swapStats(fDroid);
         swapStats(sDroid);
-        System.out.println(fDroid);
-        sDroid.toString();
+        DefaultDroid winDroid = stBattle();
+        System.out.println("Переможець бою між " + attacker.getName() + " VS " + defender.getName() + "\n\n\n" + winDroid.getName() + ", Вітаємо його!");
+
     }
     /*
     *Метод в якому ми міняємо статистику дроїдів
@@ -20,5 +26,6 @@ public class SwitchArena extends Arena{
         tmpData = tmpDroid.getDamage();
         tmpDroid.setDamage(tmpDroid.getHealth());
         tmpDroid.setHealth(tmpData);
+        System.out.println(tmpDroid);
     }
 }

@@ -9,8 +9,8 @@ public class Arena {
     /*
     *Поля для ініціалізації дроїдів для битви
      */
-    private final DefaultDroid fDroid;
-    private final DefaultDroid sDroid;
+    protected DefaultDroid fDroid;
+    protected DefaultDroid sDroid;
     protected DefaultDroid attacker;
     protected DefaultDroid defender;
     private DefaultDroid tmp;
@@ -18,14 +18,15 @@ public class Arena {
 /*
 *Конструктор в якому ініціалізуємо 2 заданих дроїда
  */
-    public Arena(DefaultDroid fDroid, DefaultDroid sDroid) {
-        this.fDroid = fDroid;
-        this.sDroid = sDroid;
+    public Arena() {
+
    }
 /*
 *Метод в якому запускаємо битву та в подальшому виводимо переможця
  */
-   public void allData() {
+   public void allData(DefaultDroid[] dTeam) {
+       this.fDroid = dTeam[0];
+       this.sDroid = dTeam[1];
        DefaultDroid winDroid = stBattle();
        System.out.println("Переможець бою між " + attacker.getName() + " VS " + defender.getName() + "\n\n\n" + winDroid.getName() + ", Вітаємо його!");
 

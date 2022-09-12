@@ -23,4 +23,5 @@ public class DoctorDroid extends DefaultDroid{
         this.patient.setHealth(this.patient.getHealth()+healD);
         return healD;
     }
+
 }
