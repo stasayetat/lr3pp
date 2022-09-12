@@ -5,10 +5,11 @@ import java.util.Random;
 *Підклас Arena, в якому кожна атака має 50% на промах
  */
 public class FiftyPercentArena extends Arena{
-   /* public FiftyPercentArena(DefaultDroid fDroid, DefaultDroid sDroid) {
-        super.allData(fDroid, sDroid);
 
-    }*/
+
+    public FiftyPercentArena() {
+        super();
+    }
 
 
 /*

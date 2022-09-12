@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bb4e5cd-34cd-4ff6-af85-ae991e3ec3eb" name="Changes" comment="add all_fix">
+    <list default="true" id="7bb4e5cd-34cd-4ff6-af85-ae991e3ec3eb" name="Changes" comment="add clone_droid">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/Battle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DefaultDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DefaultDroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/FiftyPercentArena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/FiftyPercentArena.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662988994714</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add clone_droid">
+      <created>1662994959908</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1662994959908</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,14 +190,15 @@
     <MESSAGE value="add good end program" />
     <MESSAGE value="add comments" />
     <MESSAGE value="add all_fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="add all_fix" />
+    <MESSAGE value="add clone_droid" />
+    <option name="LAST_COMMIT_MESSAGE" value="add clone_droid" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/FiftyPercentArena.java</url>
-          <line>18</line>
+          <line>20</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -203,6 +210,11 @@
           <url>file://$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/ArenaManyDroid.java</url>
           <line>62</line>
           <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/yarets/droidbattle/Battle.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

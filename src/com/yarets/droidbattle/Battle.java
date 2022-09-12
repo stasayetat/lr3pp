@@ -2,6 +2,8 @@ package com.yarets.droidbattle;
 
 import com.yarets.droidbattle.TypesOfArena.Arena;
 import com.yarets.droidbattle.TypesOfArena.ArenaManyDroid;
+import com.yarets.droidbattle.TypesOfArena.FiftyPercentArena;
+import com.yarets.droidbattle.TypesOfArena.SwitchArena;
 import com.yarets.droidbattle.TypesofDroids.*;
 
 import java.util.Scanner;
@@ -21,8 +23,8 @@ public class Battle{
     private final AttackTwiceDroid aDroid = new AttackTwiceDroid("aD");
 
     private Arena aArena = new Arena();
-    private Arena fArena = new Arena();
-    private Arena sArena = new Arena();
+    private Arena fArena = new FiftyPercentArena();
+    private Arena sArena = new SwitchArena();
     /*
     *Поле для масиву зі всіма дроїдами
      */
