@@ -9,10 +9,11 @@ import java.util.Scanner;
 /*
 *Клас в якому створюються дроїди та вибираємо арену для поєдинку
  */
-public class Battle {
+public class Battle{
     /*
-    *Поля створені для подання інформації про різних дроїдів
+     *Поля створені для подання інформації про різних дроїдів
      */
+
     private final TwoLivesDroid tDroid = new TwoLivesDroid("tD");
     private final DoctorDroid dDroid = new DoctorDroid("dD");
     private final DoubleAttack daDroid = new DoubleAttack("daD");
@@ -61,7 +62,11 @@ public class Battle {
         else
             numPlayerTeam = chooseTeamBattle * 2;
         twoDroid = new DefaultDroid[numPlayerTeam];
-        typeOfDroid(numPlayerTeam);
+        try {
+            typeOfDroid(numPlayerTeam);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         typeOfArena();
     }
 
@@ -76,7 +81,7 @@ public class Battle {
         System.out.println("4. Дроїд - AttackTwiceDroid(атакує двічі за хід), його атака " + typicalDroid[4].getDamage() + ", його здоров'я " + typicalDroid[4].getHealth());
     }
 
-    public void typeOfDroid(int numPlayerTeam) {
+    public void typeOfDroid(int numPlayerTeam) throws Exception{
         Scanner sc = new Scanner(System.in);
         String nameDroid = null;
         for(int i = 0; i < numPlayerTeam; ++i)
@@ -94,8 +99,7 @@ public class Battle {
                 --i;
                 continue;
             }
-
-            twoDroid[i] = typicalDroid[chDroid];
+            twoDroid[i] = typicalDroid[chDroid].clone();
             twoDroid[i].setName(nameDroid);
         }
     }
@@ -132,6 +136,7 @@ public class Battle {
         System.out.println("2. Арена, на якій при кожному ударі шанс 50% на промах");
         System.out.println("3. Арена, для бою багатьох дроїдів");
     }
+
 }
 
 

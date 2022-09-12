@@ -2,7 +2,7 @@ package com.yarets.droidbattle.TypesofDroids;
 /*
 *Клас для початкового класу дроїда, всі інші похідні від нього
  */
-public class DefaultDroid {
+public class DefaultDroid implements Cloneable{
     /*
     *Поля для задання імені, урону та здоров'я дроїда
      */
@@ -64,6 +64,10 @@ public class DefaultDroid {
         return "У дроїда: " + this.name + " залишилось " + this.health + " здоров'я та " + this.damage + " урону";
     }
 
+    @Override
+    public DefaultDroid clone() throws CloneNotSupportedException {
+        return (DefaultDroid)super.clone();
+    }
 
 }
 
