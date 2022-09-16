@@ -1,6 +1,11 @@
 package com.yarets.droidbattle.TypesOfArena;
-import com.yarets.droidbattle.TypesofDroids.*;
 
+import com.yarets.droidbattle.DualStream;
+import com.yarets.droidbattle.TypesofDroids.DefaultDroid;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.Random;
 /*
 *Клас для звичайної битви 1 на 1
@@ -15,6 +20,7 @@ public class Arena {
     protected DefaultDroid[] defender;
     private DefaultDroid[] tmp = new DefaultDroid[1];
 
+
 /*
 *Конструктор в якому ініціалізуємо 2 заданих дроїда
  */
@@ -24,7 +30,7 @@ public class Arena {
 /*
 *Метод в якому запускаємо битву та в подальшому виводимо переможця
  */
-   public void allData(DefaultDroid[] dTeam) {
+   public void allData(DefaultDroid[] dTeam) throws FileNotFoundException {
        DefaultDroid[] winDroid = stBattle(dTeam);
        System.out.println("Переможець бою між " + attacker[0].getName() + " VS " + defender[0].getName() + "\n\n\n" + winDroid[0].getName() + ", Вітаємо його!");
         return;
@@ -33,7 +39,14 @@ public class Arena {
    /*
    *Метод битви спочатку рандомно визначаємо першого атакуючого, далі виводимо послідовно коден раунд, поки 1 робот не знищеться, повертаємо переможця
     */
-    public DefaultDroid[] stBattle(DefaultDroid[] dTeam) {
+    public DefaultDroid[] stBattle(DefaultDroid[] dTeam) throws FileNotFoundException {
+        PrintStream out = new PrintStream(new FileOutputStream("C:\\Tests\\test_java\\out.txt"));
+        PrintStream dual = new DualStream(System.out, out);
+        System.setOut(dual);
+
+        PrintStream err = new PrintStream(new FileOutputStream("C:\\Tests\\test_java\\err.txt"));
+        dual= new DualStream(System.err, err);
+        System.setErr(dual);
         int lenTeam = dTeam.length;
         DefaultDroid[] fTeam = new DefaultDroid[lenTeam / 2];
         DefaultDroid[] sTeam = new DefaultDroid[lenTeam / 2];

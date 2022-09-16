@@ -1,6 +1,9 @@
 package com.yarets.droidbattle.TypesOfArena;
 
 import com.yarets.droidbattle.TypesofDroids.DefaultDroid;
+
+import java.io.FileNotFoundException;
+
 /*
 *Арена, під клас звичайної Arena, в ній в кожного дроїда здоров'я міняється з атакою
  */
@@ -9,7 +12,7 @@ public class SwitchArena extends Arena{
     }
 
     @Override
-    public void allData(DefaultDroid[] dTeam) {
+    public void allData(DefaultDroid[] dTeam) throws FileNotFoundException {
         swapStats(dTeam[0]);
         swapStats(dTeam[1]);
         DefaultDroid[] winDroid = stBattle(dTeam);

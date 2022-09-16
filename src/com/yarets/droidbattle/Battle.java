@@ -6,6 +6,7 @@ import com.yarets.droidbattle.TypesOfArena.FiftyPercentArena;
 import com.yarets.droidbattle.TypesOfArena.SwitchArena;
 import com.yarets.droidbattle.TypesofDroids.*;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /*
@@ -39,7 +40,7 @@ public class Battle{
     /*
     *Конструктор в якому ми вибираємо тип поєдинку та створюємо дроїдів
      */
-    public Battle() {
+    public Battle() throws FileNotFoundException {
         this.typicalDroid[0] = dDroid;
         this.typicalDroid[1] = daDroid;
         this.typicalDroid[2] = dpDroid;
@@ -110,7 +111,7 @@ public class Battle{
 /*
 *Метод для вибору арени
  */
-    public void typeOfArena() {
+    public void typeOfArena() throws FileNotFoundException {
         Scanner sc = new Scanner(System.in);
         System.out.println("Виберіть арену для битви(0-3, 99 - інформація про арени): ");
         int chArena = sc.nextInt();

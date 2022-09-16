@@ -1,7 +1,11 @@
 package com.yarets.droidbattle.TypesOfArena;
 
+import com.yarets.droidbattle.DualStream;
 import com.yarets.droidbattle.TypesofDroids.DefaultDroid;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.Random;
 /*
 *Окремий клас Арени для битви команд на команду
@@ -19,7 +23,7 @@ public class ArenaManyDroid {
     /*
     Метод в якому ми запускаємо битву і потім викликаємо метод про її закінчення
      */
-    public void allData() {
+    public void allData() throws FileNotFoundException {
         DefaultDroid[] winDroid = stBattle();
         endBattle(winDroid);
         return;
@@ -35,7 +39,14 @@ public class ArenaManyDroid {
     /*
     *Метод самої битви, де ми створюємо 2 команди, вибираємо, яка 1 буде атакувати, і викликаємо атаку поки команда противників жива
      */
-    public DefaultDroid[] stBattle() {
+    public DefaultDroid[] stBattle() throws FileNotFoundException {
+        PrintStream out = new PrintStream(new FileOutputStream("C:\\Tests\\test_java\\out.txt"));
+        PrintStream dual = new DualStream(System.out, out);
+        System.setOut(dual);
+
+        PrintStream err = new PrintStream(new FileOutputStream("C:\\Tests\\test_java\\err.txt"));
+        dual= new DualStream(System.err, err);
+        System.setErr(dual);
         int lenTeam = dTeam.length;
         DefaultDroid[] fTeam = new DefaultDroid[lenTeam / 2];
         DefaultDroid[] sTeam = new DefaultDroid[lenTeam / 2];

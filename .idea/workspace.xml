@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bb4e5cd-34cd-4ff6-af85-ae991e3ec3eb" name="Changes" comment="fix micro-bug">
+    <list default="true" id="7bb4e5cd-34cd-4ff6-af85-ae991e3ec3eb" name="Changes" comment="fix all">
+      <change afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/DualStream.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/Battle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/Arena.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/ArenaManyDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/ArenaManyDroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/FiftyPercentArena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/FiftyPercentArena.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/SwitchArena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/SwitchArena.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/AttackTwiceDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/AttackTwiceDroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DefaultDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DefaultDroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DoctorDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DoctorDroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DoubleAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yarets/droidbattle/TypesofDroids/DoubleAttack.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -183,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662996227606</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fix all">
+      <created>1663346099958</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1663346099958</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -208,7 +209,8 @@
     <MESSAGE value="add all_fix" />
     <MESSAGE value="add clone_droid" />
     <MESSAGE value="fix micro-bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix micro-bug" />
+    <MESSAGE value="fix all" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix all" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -220,13 +222,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/Arena.java</url>
-          <line>27</line>
+          <line>33</line>
           <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/Arena.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/yarets/droidbattle/TypesOfArena/ArenaManyDroid.java</url>
