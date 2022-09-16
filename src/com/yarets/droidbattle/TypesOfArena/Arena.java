@@ -11,9 +11,9 @@ public class Arena {
      */
     protected DefaultDroid fDroid;
     protected DefaultDroid sDroid;
-    protected DefaultDroid attacker;
-    protected DefaultDroid defender;
-    private DefaultDroid tmp;
+    protected DefaultDroid[] attacker;
+    protected DefaultDroid[] defender;
+    private DefaultDroid[] tmp = new DefaultDroid[1];
 
 /*
 *Конструктор в якому ініціалізуємо 2 заданих дроїда
@@ -25,78 +25,70 @@ public class Arena {
 *Метод в якому запускаємо битву та в подальшому виводимо переможця
  */
    public void allData(DefaultDroid[] dTeam) {
-       this.fDroid = dTeam[0];
-       this.sDroid = dTeam[1];
-       DefaultDroid winDroid = stBattle();
-       System.out.println("Переможець бою між " + attacker.getName() + " VS " + defender.getName() + "\n\n\n" + winDroid.getName() + ", Вітаємо його!");
-
+       DefaultDroid[] winDroid = stBattle(dTeam);
+       System.out.println("Переможець бою між " + attacker[0].getName() + " VS " + defender[0].getName() + "\n\n\n" + winDroid[0].getName() + ", Вітаємо його!");
+        return;
    }
 
    /*
    *Метод битви спочатку рандомно визначаємо першого атакуючого, далі виводимо послідовно коден раунд, поки 1 робот не знищеться, повертаємо переможця
     */
-    public DefaultDroid stBattle() {
+    public DefaultDroid[] stBattle(DefaultDroid[] dTeam) {
+        int lenTeam = dTeam.length;
+        DefaultDroid[] fTeam = new DefaultDroid[lenTeam / 2];
+        DefaultDroid[] sTeam = new DefaultDroid[lenTeam / 2];
+        System.arraycopy(dTeam, 0, fTeam, 0, lenTeam/2);
+        System.arraycopy(dTeam, lenTeam/2, sTeam, 0, lenTeam/2);
+        System.out.println("Команда А: ");
+        infoTeam(fTeam);
+        System.out.println("\nКоманда B: ");
+        infoTeam(sTeam);
         Random rand = new Random();
         if(rand.nextBoolean()) {
-            attacker = fDroid;
-            defender = sDroid;
+            attacker = fTeam;
+            defender = sTeam;
         }
         else {
-            attacker = sDroid;
-            defender = fDroid;
+            attacker = sTeam;
+            defender = fTeam;
         }
         int curRound = 0;
         do {
             curRound++;
             System.out.println("-------------------------------------");
             System.out.println("Раунд - " + curRound);
-            System.out.println("Атакує - " + attacker.getName());
-            System.out.println("Захищається - " + defender.getName());
+            System.out.println("Атакує - " + attacker[0].getName());
+            System.out.println("Захищається - " + defender[0].getName());
             /*
             *Виклик головної фази битви
              */
             doFight();
-            System.out.println("У дроїда " + defender.getName() + " залишилось " + defender.getHealth() + " HP");
-            System.out.println("У дроїда " + attacker.getName() + " залишилось " + attacker.getHealth() + " HP");
+            System.out.println("У дроїда " + defender[0].getName() + " залишилось " + defender[0].getHealth() + " HP");
+            System.out.println("У дроїда " + attacker[0].getName() + " залишилось " + attacker[0].getHealth() + " HP");
             swapFighter(attacker, defender);
-        } while (attacker.isAlive());
+        } while (attacker[0].isAlive());
         return defender;
     }
 /*
 *Метод в якому перевіряємо чи є атакуючий дроїд певним класом, якщо так то робимо певні рядки, якщо ні то просто атакуємо
  */
-    private void doFight() {
-        if(attacker instanceof DoctorDroid) {
-            int healed = ((DoctorDroid) attacker).healDroid(attacker);
-            System.out.println("Дроїд " + attacker.getName() + " вилікував себе на " + healed + "HP");
-            printInfo();
-        }
-        else if (attacker instanceof  AttackTwiceDroid) {
-            printInfo();
-            printInfo();
-        }
-        else if(attacker instanceof  DoubleAttack) {
-            printInfo();
-            int doubled = attacker.getDamage() * 2;
-            attacker.setDamage(doubled);
-            System.out.println("У дроїда " + attacker.getName() + " збільшено атаку удвічу, тепер вона - " + attacker.getDamage());
-        }
-        else
-            printInfo();
-    }
+
 /*
 *Метод в якому атакуючий дроїд наносить урон іншому дроїду і виводить цю інформацію
  */
-    public void printInfo() {
-        int aDamage = defender.attackDroid(attacker.getDamage());
-        System.out.println("Дроїд " + attacker.getName() + " наніс дроїду " + defender.getName() + " урону: " + aDamage);
-    }
+  public void doFight() {
+      attacker[0].printInfo(attacker, defender, 0);
+  }
 /*
 *Кожен хід міняємо атакуючого дроїда з іншим
  */
-    private void swapFighter(DefaultDroid attacker, DefaultDroid defender) {
-        tmp = this.attacker;
-        this.attacker = this.defender;
-        this.defender = tmp;
+protected void swapFighter(DefaultDroid[] attacker, DefaultDroid[] defender) {
+    System.arraycopy(attacker, 0, tmp, 0, attacker.length);
+    System.arraycopy(defender, 0, attacker, 0, attacker.length);
+    System.arraycopy(tmp, 0, defender, 0, attacker.length);
+}
+
+    public void infoTeam(DefaultDroid[] tmpTeam) {
+    System.out.println("Дроїд: " + tmpTeam[0].getName() + " Здоров'я: " + tmpTeam[0].getHealth() + " Урон: " + tmpTeam[0].getDamage());
     }
 }

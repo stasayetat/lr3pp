@@ -10,12 +10,10 @@ public class SwitchArena extends Arena{
 
     @Override
     public void allData(DefaultDroid[] dTeam) {
-        this.fDroid = dTeam[0];
-        this.sDroid = dTeam[1];
-        swapStats(fDroid);
-        swapStats(sDroid);
-        DefaultDroid winDroid = stBattle();
-        System.out.println("Переможець бою між " + attacker.getName() + " VS " + defender.getName() + "\n\n\n" + winDroid.getName() + ", Вітаємо його!");
+        swapStats(dTeam[0]);
+        swapStats(dTeam[1]);
+        DefaultDroid[] winDroid = stBattle(dTeam);
+        System.out.println("Переможець бою між " + attacker[0].getName() + " VS " + defender[0].getName() + "\n\n\n" + winDroid[0].getName() + ", Вітаємо його!");
 
     }
     /*

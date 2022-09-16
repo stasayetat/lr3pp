@@ -14,9 +14,15 @@ public class AttackTwiceDroid extends DefaultDroid{
         setDamage(damage);
     }
 
-    public int attackDroid(int damageDroid) {
-        this.health -= damageDroid;
-        return damageDroid;
+    @Override
+    public void printInfo(DefaultDroid[] attacker, DefaultDroid[] defender, int curDef) {
+        int aDamage = defender[curDef].attackDroid(this.getDamage());
+        System.out.println("Дроїд " + this.getName() + " наніс дроїду " + defender[curDef].getName() + " урону: " + aDamage);
+        if(!defender[curDef].isAlive())
+            return;
+        aDamage = defender[curDef].attackDroid(this.getDamage());
+        System.out.println("Дроїд " + this.getName() + " наніс дроїду " + defender[curDef].getName() + " урону: " + aDamage);
+
     }
 
 }

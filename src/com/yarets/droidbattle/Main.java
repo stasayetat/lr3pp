@@ -1,6 +1,5 @@
 package com.yarets.droidbattle;
 
-import com.yarets.droidbattle.TypesofDroids.DoubleProtectionDroid;
 /*
 *@author Stanislaw Yarets
 *@version 1.0
@@ -9,5 +8,6 @@ import com.yarets.droidbattle.TypesofDroids.DoubleProtectionDroid;
 public class Main {
     public static void main(String[] args) {
         Battle initBattle = new Battle();
+        System.out.println("Гру закінчено!");
     }
 }

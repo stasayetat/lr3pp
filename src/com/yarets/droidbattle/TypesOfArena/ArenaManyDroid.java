@@ -1,12 +1,8 @@
 package com.yarets.droidbattle.TypesOfArena;
 
-import com.yarets.droidbattle.TypesofDroids.AttackTwiceDroid;
 import com.yarets.droidbattle.TypesofDroids.DefaultDroid;
-import com.yarets.droidbattle.TypesofDroids.DoctorDroid;
-import com.yarets.droidbattle.TypesofDroids.DoubleAttack;
 
 import java.util.Random;
-import java.util.Scanner;
 /*
 *Окремий клас Арени для битви команд на команду
  */
@@ -26,6 +22,7 @@ public class ArenaManyDroid {
     public void allData() {
         DefaultDroid[] winDroid = stBattle();
         endBattle(winDroid);
+        return;
     }
 /*
 *Метод в якому ми оголошуємо переможців і закінчуємо програму
@@ -98,42 +95,16 @@ public class ArenaManyDroid {
 *Метод в якому перевіряємо чи є атакуючий дроїд певним класом, та атакуємо супротивника
  */
     private void doTeamBattle(int curAttack) {
-        Scanner sc = new Scanner(System.in);
-        if(attacker[curAttack] instanceof DoctorDroid) {
-            infoTeam(attacker);
-            System.out.println("Виберіть кого полікувати: ");
-            int healPatient = sc.nextInt();
-            int healed = ((DoctorDroid) attacker[curAttack]).healDroid(attacker[healPatient]);
-            System.out.println("Дроїд " + attacker[curAttack].getName() + " вилікував " + attacker[healPatient].getName() + " на " + healed + " HP");
-            printInfo(curAttack);
-        }
-        else if (attacker[curAttack] instanceof AttackTwiceDroid) {
-            printInfo(curAttack);
-            printInfo(curAttack);
-        }
-        else if(attacker[curAttack] instanceof DoubleAttack) {
-            printInfo(curAttack);
-            int doubled = attacker[curAttack].getDamage() * 2;
-            attacker[curAttack].setDamage(doubled);
-            System.out.println("У дроїда " + attacker[curAttack].getName() + " збільшено атаку удвічу, тепер вона - " + attacker[curAttack].getDamage());
-        }
-        else
-            printInfo(curAttack);
-    }
-/*
-*Метод для випадкового вибору противника та удару його
- */
-    private void printInfo(int curAttack) {
         Random rand = new Random();
         int curDef;
         do {
             curDef = rand.nextInt(defender.length);
         }while (!defender[curDef].isAlive());
-        int aDamage = defender[curDef].attackDroid(attacker[curAttack].getDamage());
-        System.out.println("Дроїд " + attacker[curAttack].getName() + " наніс дроїду " + defender[curDef].getName() + " урону: " + aDamage);
-        if(!checkTeamsAlive(defender))
-            endBattle(attacker);
+        attacker[curAttack].printInfo(attacker, defender, curDef);
     }
+/*
+*Метод для випадкового вибору противника та удару його
+ */
 
     /*
     *Кожного ходу ми змінюємо команду атакуючих дроїдів на інші

@@ -113,8 +113,7 @@ public class Battle{
     public void typeOfArena() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Виберіть арену для битви(0-3, 99 - інформація про арени): ");
-        int chArena;
-        chArena = sc.nextInt();
+        int chArena = sc.nextInt();
         if(chArena == 99) {
             infoArena();
             System.out.println("Виберіть арену: ");
@@ -124,7 +123,6 @@ public class Battle{
             ArenaManyDroid battleManyDroid = new ArenaManyDroid(twoDroid);
             battleManyDroid.allData();
         }
-
         battleArena = typicalArena[chArena];
         battleArena.allData(twoDroid);
 
